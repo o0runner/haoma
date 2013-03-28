@@ -20,6 +20,8 @@ class admin extends CI_Controller {
         if ($this->input->post('button')) {
             $this->load->library('form_validation'); 
             if ($this->form_validation->run()) {
+                $this->load->model('Model_users', 'users', TRUE);
+                echo $this->users->checkuser();
                 echo '验证成功';
             } else {
                 $this->load->view('admin_login');

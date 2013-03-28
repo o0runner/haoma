@@ -13,12 +13,12 @@ $config = array(
         array(
             'field'   => 'username', 
             'label'   => '账号', 
-            'rules'   => 'trim|required|min_length[5]|max_length[12]|xss_clean|is_unique[users.username]'
+            'rules'   => 'trim|required|min_length[5]|max_length[12]|xss_clean'
         ),
         array(
             'field'   => 'password', 
             'label'   => '密码', 
-            'rules'   => 'trim|required'
+            'rules'   => 'trim|required|md5'
         )
     )
 );
