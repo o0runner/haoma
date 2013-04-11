@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://lqm.me/';
+$config['base_url']	= 'http://www.zz10086.com/';
 
 /*
 |--------------------------------------------------------------------------

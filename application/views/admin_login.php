@@ -81,24 +81,8 @@
         );
         echo form_input($data);
         echo form_error('captcha', '<span class="error">', '</span>');
-        $vals = array(
-            'word' => rand(1000, 10000),
-            'img_path' => './captcha/',
-            'img_url' => 'http://lqm.me/captcha/',
-            'img_width' => 70,
-            'img_height' => 30,
-            'font_path' => './font/Duality.ttf'
-        );
-        $cap = create_captcha($vals);
-        $data = array(
-            'captcha_time' => $cap['time'],
-            'ip_address' => $this->input->ip_address(),
-            'word' => $cap['word']
-        );
-        $this->session->set_flashdata('captcha_word', $cap['word']);
-        echo $cap['image'];
       ?>
-
+      <img src="http://www.zz10086.com/admin/captcha?<?php echo time(); ?>" />
       <label class="checkbox">
         <?php
           $data = array(
@@ -122,7 +106,7 @@
         echo form_close();
       ?>
     </div>
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
