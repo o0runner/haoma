@@ -73,7 +73,16 @@
         );
         echo form_password($data);
         echo form_error('password', '<span class="error">', '</span>');
+        $data = array(
+          'name'        => 'captcha',
+          'maxlength'   => '100',
+          'class'       => 'input-block-level',
+          'placeholder' => '验证码',
+        );
+        echo form_input($data);
+        echo form_error('captcha', '<span class="error">', '</span>');
       ?>
+      <img src="http://www.zz10086.com/admin/captcha?<?php echo time(); ?>" />
       <label class="checkbox">
         <?php
           $data = array(
@@ -97,7 +106,7 @@
         echo form_close();
       ?>
     </div>
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
