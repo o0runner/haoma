@@ -11,7 +11,7 @@ class Model_users extends CI_Model {
     {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $query = $this->db->query("SELECT `password` FROM lqm_users WHERE `username` = '".$username."' LIMIT 1");
+        $query = $this->db->query("SELECT `password` FROM zz_users WHERE `username` = '".$username."' LIMIT 1");
         if ($query->num_rows() > 0) {
             $row = $query->row();
             if ($row->password == $password) {

@@ -29,7 +29,7 @@ class admin extends CI_Controller {
                     $this->load->library('session');
                     $newdata = array('username' => $this->input->post('username'));
                     $this->session->set_userdata($newdata);
-                    redirect('/admin/dianhua', 'location', 301);
+                    redirect('/admin/home', 'location', 301);
                 } else {
                     $this->load->view('admin_login');
                 }
@@ -41,9 +41,9 @@ class admin extends CI_Controller {
         }
     }
 
-    public function dianhua()
+    public function home()
     {
-        echo '登陆成功<a href="/admin/logout">退出</a>';
+        $this->load->view('admin_home');
     }
 
     public function logout()
